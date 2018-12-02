@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_telegrambotapi" default="compile.module.telegrambotapi">
+  <dirname property="module.telegrambotapi.basedir" file="${ant.file.module_telegrambotapi}"/>
+  
+  <property name="module.jdk.home.telegrambotapi" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.telegrambotapi" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.telegrambotapi" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.telegrambotapi" value="-encoding UTF-8 -source 1.7 -target 1.7 ${compiler.args}"/>
+  
+  <property name="telegrambotapi.output.dir" value="${module.telegrambotapi.basedir}/target/classes"/>
+  <property name="telegrambotapi.testoutput.dir" value="${module.telegrambotapi.basedir}/target/test-classes"/>
+  
+  <path id="telegrambotapi.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="telegrambotapi.module.production.classpath">
+    <path refid="${module.jdk.classpath.telegrambotapi}"/>
+    <path refid="library.maven:_org.telegram:telegrambots:3.6.classpath"/>
+    <path refid="library.maven:_org.telegram:telegrambots-meta:3.6.classpath"/>
+    <path refid="library.maven:_com.google.inject:guice:4.1.0.classpath"/>
+    <path refid="library.maven:_javax.inject:javax.inject:1.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_com.google.guava:guava:19.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.8.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.8.7.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.8.7.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.8.7.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.8.7.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.8.7.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.media:jersey-media-json-jackson:2.25.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-common:2.25.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.bundles.repackaged:jersey-guava:2.25.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:osgi-resource-locator:1.0.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.ext:jersey-entity-filtering:2.25.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.containers:jersey-container-grizzly2-http:2.25.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2.external:javax.inject:2.5.0-b32.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http-server:2.3.28.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http:2.3.28.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-framework:2.3.28.classpath"/>
+    <path refid="library.maven:_javax.ws.rs:javax.ws.rs-api:2.0.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-server:2.25.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-client:2.25.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.media:jersey-media-jaxb:2.25.1.classpath"/>
+    <path refid="library.maven:_javax.annotation:javax.annotation-api:1.2.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-api:2.5.0-b32.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-utils:2.5.0-b32.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2.external:aopalliance-repackaged:2.5.0-b32.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-locator:2.5.0-b32.classpath"/>
+    <path refid="library.maven:_org.javassist:javassist:3.20.0-ga.classpath"/>
+    <path refid="library.maven:_javax.validation:validation-api:1.1.0.final.classpath"/>
+    <path refid="library.maven:_org.json:json:20160810.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.5.3.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.4.6.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.2.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.9.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpmime:4.5.3.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:2.5.classpath"/>
+  </path>
+  
+  <path id="telegrambotapi.runtime.production.module.classpath">
+    <pathelement location="${telegrambotapi.output.dir}"/>
+    <path refid="library.maven:_org.telegram:telegrambots:3.6.classpath"/>
+    <path refid="library.maven:_org.telegram:telegrambots-meta:3.6.classpath"/>
+    <path refid="library.maven:_com.google.inject:guice:4.1.0.classpath"/>
+    <path refid="library.maven:_javax.inject:javax.inject:1.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_com.google.guava:guava:19.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.8.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.8.7.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.8.7.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.8.7.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.8.7.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.8.7.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.media:jersey-media-json-jackson:2.25.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-common:2.25.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.bundles.repackaged:jersey-guava:2.25.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:osgi-resource-locator:1.0.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.ext:jersey-entity-filtering:2.25.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.containers:jersey-container-grizzly2-http:2.25.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2.external:javax.inject:2.5.0-b32.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http-server:2.3.28.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http:2.3.28.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-framework:2.3.28.classpath"/>
+    <path refid="library.maven:_javax.ws.rs:javax.ws.rs-api:2.0.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-server:2.25.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-client:2.25.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.media:jersey-media-jaxb:2.25.1.classpath"/>
+    <path refid="library.maven:_javax.annotation:javax.annotation-api:1.2.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-api:2.5.0-b32.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-utils:2.5.0-b32.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2.external:aopalliance-repackaged:2.5.0-b32.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-locator:2.5.0-b32.classpath"/>
+    <path refid="library.maven:_org.javassist:javassist:3.20.0-ga.classpath"/>
+    <path refid="library.maven:_javax.validation:validation-api:1.1.0.final.classpath"/>
+    <path refid="library.maven:_org.json:json:20160810.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.5.3.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.4.6.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.2.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.9.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpmime:4.5.3.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:2.5.classpath"/>
+  </path>
+  
+  <path id="telegrambotapi.module.classpath">
+    <path refid="${module.jdk.classpath.telegrambotapi}"/>
+    <pathelement location="${telegrambotapi.output.dir}"/>
+    <path refid="library.maven:_org.telegram:telegrambots:3.6.classpath"/>
+    <path refid="library.maven:_org.telegram:telegrambots-meta:3.6.classpath"/>
+    <path refid="library.maven:_com.google.inject:guice:4.1.0.classpath"/>
+    <path refid="library.maven:_javax.inject:javax.inject:1.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_com.google.guava:guava:19.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.8.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.8.7.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.8.7.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.8.7.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.8.7.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.8.7.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.media:jersey-media-json-jackson:2.25.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-common:2.25.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.bundles.repackaged:jersey-guava:2.25.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:osgi-resource-locator:1.0.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.ext:jersey-entity-filtering:2.25.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.containers:jersey-container-grizzly2-http:2.25.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2.external:javax.inject:2.5.0-b32.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http-server:2.3.28.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http:2.3.28.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-framework:2.3.28.classpath"/>
+    <path refid="library.maven:_javax.ws.rs:javax.ws.rs-api:2.0.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-server:2.25.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-client:2.25.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.media:jersey-media-jaxb:2.25.1.classpath"/>
+    <path refid="library.maven:_javax.annotation:javax.annotation-api:1.2.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-api:2.5.0-b32.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-utils:2.5.0-b32.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2.external:aopalliance-repackaged:2.5.0-b32.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-locator:2.5.0-b32.classpath"/>
+    <path refid="library.maven:_org.javassist:javassist:3.20.0-ga.classpath"/>
+    <path refid="library.maven:_javax.validation:validation-api:1.1.0.final.classpath"/>
+    <path refid="library.maven:_org.json:json:20160810.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.5.3.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.4.6.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.2.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.9.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpmime:4.5.3.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:2.5.classpath"/>
+  </path>
+  
+  <path id="telegrambotapi.runtime.module.classpath">
+    <pathelement location="${telegrambotapi.testoutput.dir}"/>
+    <pathelement location="${telegrambotapi.output.dir}"/>
+    <path refid="library.maven:_org.telegram:telegrambots:3.6.classpath"/>
+    <path refid="library.maven:_org.telegram:telegrambots-meta:3.6.classpath"/>
+    <path refid="library.maven:_com.google.inject:guice:4.1.0.classpath"/>
+    <path refid="library.maven:_javax.inject:javax.inject:1.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_com.google.guava:guava:19.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.8.0.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.8.7.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.8.7.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.8.7.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.8.7.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.8.7.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.media:jersey-media-json-jackson:2.25.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-common:2.25.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.bundles.repackaged:jersey-guava:2.25.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:osgi-resource-locator:1.0.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.ext:jersey-entity-filtering:2.25.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.containers:jersey-container-grizzly2-http:2.25.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2.external:javax.inject:2.5.0-b32.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http-server:2.3.28.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-http:2.3.28.classpath"/>
+    <path refid="library.maven:_org.glassfish.grizzly:grizzly-framework:2.3.28.classpath"/>
+    <path refid="library.maven:_javax.ws.rs:javax.ws.rs-api:2.0.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-server:2.25.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.core:jersey-client:2.25.1.classpath"/>
+    <path refid="library.maven:_org.glassfish.jersey.media:jersey-media-jaxb:2.25.1.classpath"/>
+    <path refid="library.maven:_javax.annotation:javax.annotation-api:1.2.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-api:2.5.0-b32.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-utils:2.5.0-b32.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2.external:aopalliance-repackaged:2.5.0-b32.classpath"/>
+    <path refid="library.maven:_org.glassfish.hk2:hk2-locator:2.5.0-b32.classpath"/>
+    <path refid="library.maven:_org.javassist:javassist:3.20.0-ga.classpath"/>
+    <path refid="library.maven:_javax.validation:validation-api:1.1.0.final.classpath"/>
+    <path refid="library.maven:_org.json:json:20160810.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpclient:4.5.3.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpcore:4.4.6.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.2.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.9.classpath"/>
+    <path refid="library.maven:_org.apache.httpcomponents:httpmime:4.5.3.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:2.5.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.telegrambotapi">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.telegrambotapi">
+    <patternset refid="excluded.from.module.telegrambotapi"/>
+  </patternset>
+  
+  <path id="telegrambotapi.module.sourcepath">
+    <dirset dir="${module.telegrambotapi.basedir}">
+      <include name="src/main/java"/>
+      <include name="src/main/resources"/>
+    </dirset>
+  </path>
+  
+  <path id="telegrambotapi.module.test.sourcepath">
+    <dirset dir="${module.telegrambotapi.basedir}">
+      <include name="src/test/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.telegrambotapi" depends="compile.module.telegrambotapi.production,compile.module.telegrambotapi.tests" description="Compile module TelegramBotApi"/>
+  
+  <target name="compile.module.telegrambotapi.production" depends="register.custom.compilers" description="Compile module TelegramBotApi; production classes">
+    <mkdir dir="${telegrambotapi.output.dir}"/>
+    <javac2 destdir="${telegrambotapi.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.telegrambotapi}/javac">
+      <compilerarg line="${compiler.args.telegrambotapi}"/>
+      <bootclasspath refid="telegrambotapi.module.bootclasspath"/>
+      <classpath refid="telegrambotapi.module.production.classpath"/>
+      <src refid="telegrambotapi.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.telegrambotapi"/>
+    </javac2>
+    
+    <copy todir="${telegrambotapi.output.dir}">
+      <fileset dir="${module.telegrambotapi.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.telegrambotapi.basedir}/src/main/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.telegrambotapi.tests" depends="register.custom.compilers,compile.module.telegrambotapi.production" description="compile module TelegramBotApi; test classes" unless="skip.tests">
+    <mkdir dir="${telegrambotapi.testoutput.dir}"/>
+    <javac2 destdir="${telegrambotapi.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.telegrambotapi}/javac">
+      <compilerarg line="${compiler.args.telegrambotapi}"/>
+      <bootclasspath refid="telegrambotapi.module.bootclasspath"/>
+      <classpath refid="telegrambotapi.module.classpath"/>
+      <src refid="telegrambotapi.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.telegrambotapi"/>
+    </javac2>
+    
+    <copy todir="${telegrambotapi.testoutput.dir}">
+      <fileset dir="${module.telegrambotapi.basedir}/src/test/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.telegrambotapi" description="cleanup module">
+    <delete dir="${telegrambotapi.output.dir}"/>
+    <delete dir="${telegrambotapi.testoutput.dir}"/>
+  </target>
+</project>
